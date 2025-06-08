@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize service buttons (botões únicos)
     initServiceButtons();
     
-    // Initialize mobile menu
+    // Initialize mobile menu - CORRIGIDO
     initMobileMenu();
 
     // Initialize icon rotations
@@ -221,13 +221,19 @@ function contactService(serviceName) {
     window.open(whatsappLink, '_blank');
 }
 
-// Função para menu mobile
+// Função para menu mobile - CORRIGIDA
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
+    const navLinks = document.querySelectorAll('.nav-link');
     
     if (menuToggle && nav) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('Menu toggle clicked'); // Debug
+            
             const isActive = nav.classList.contains('active');
             
             if (isActive) {
@@ -237,9 +243,23 @@ function initMobileMenu() {
             }
         });
         
+        // Fechar menu ao clicar em um link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+        });
+        
         // Fechar menu ao clicar fora
         document.addEventListener('click', function(e) {
             if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Fechar menu ao redimensionar para desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
                 closeMobileMenu();
             }
         });
@@ -250,9 +270,23 @@ function openMobileMenu() {
     const nav = document.querySelector('.nav');
     const menuToggle = document.querySelector('.menu-toggle');
     
+    console.log('Opening mobile menu'); // Debug
+    
     if (nav && menuToggle) {
         nav.classList.add('active');
         menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+        
+        // Animar entrada dos links
+        const navLinks = nav.querySelectorAll('.nav-link');
+        navLinks.forEach((link, index) => {
+            link.style.opacity = '0';
+            link.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+                link.style.transition = 'all 0.3s ease';
+                link.style.opacity = '1';
+                link.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
     }
 }
 
@@ -260,9 +294,19 @@ function closeMobileMenu() {
     const nav = document.querySelector('.nav');
     const menuToggle = document.querySelector('.menu-toggle');
     
+    console.log('Closing mobile menu'); // Debug
+    
     if (nav && menuToggle) {
         nav.classList.remove('active');
         menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        
+        // Resetar animações dos links
+        const navLinks = nav.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.style.transition = '';
+            link.style.opacity = '';
+            link.style.transform = '';
+        });
     }
 }
 
