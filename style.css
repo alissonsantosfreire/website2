@@ -1902,14 +1902,33 @@ body {
     grid-template-columns: 1fr;
   }
   
+  /* FOOTER MOBILE - CENTRALIZADO */
   .footer-content {
     flex-direction: column;
     gap: var(--space-md);
-    text-align: left;
+    text-align: center; /* Centralizar todo o conteúdo */
+    align-items: center; /* Centralizar verticalmente */
+    justify-content: center; /* Centralizar horizontalmente */
   }
   
   .footer-brand {
-    align-self: flex-start;
+    align-self: center; /* Centralizar o grupo logo + texto */
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+  
+  /* Manter texto alinhado à esquerda dentro do grupo centralizado */
+  .footer-info {
+    text-align: left;
+  }
+  
+  .footer-name {
+    text-align: left;
+  }
+  
+  .footer-subtitle {
+    text-align: left;
   }
   
   .services-categories {
