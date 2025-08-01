@@ -810,6 +810,21 @@ select.form-control {
   --gradient-section: linear-gradient(135deg, #1a4faa, #132c7c, #03224a);
   --gradient-hover: linear-gradient(45deg, #1e59c5, #173692, #052f64);
   --gradient-footer: linear-gradient(to bottom, #1a4faa, #132c7c, #03224a);
+
+/* Gradient animated class for titles */
+.gradient-animated {
+  background: linear-gradient(45deg, var(--color-primary), #32b8c6, var(--color-primary));
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
   
   /* Typography */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -1178,7 +1193,32 @@ body {
 /* About Section */
 .about {
   padding: var(--space-2xl) 0;
-  background: var(--color-white);
+  background: var(--gradient-section);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 79, 170, 0.8), rgba(19, 44, 124, 0.9), rgba(3, 34, 74, 1));
+  background-size: 400% 400%;
+  animation: gradientMovement 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes gradientFloat {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, -10px) rotate(1deg); }
+  50% { transform: translate(-5px, 10px) rotate(-1deg); }
+  75% { transform: translate(-10px, -5px) rotate(0.5deg); }
 }
 
 .about-content {
@@ -1186,6 +1226,13 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-xl);
   align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about .section-title {
+  color: var(--color-white);
+  font-size: 3rem;
 }
 
 .about-img {
@@ -1198,7 +1245,7 @@ body {
 
 .about-description {
   font-size: 1.125rem;
-  color: var(--color-text);
+  color: var(--color-white);
   margin-bottom: var(--space-lg);
   line-height: 1.7;
 }
@@ -1215,25 +1262,28 @@ body {
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-md);
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all var(--duration-normal) var(--ease-smooth);
 }
 
 .specialty-item:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .specialty-item i {
   font-size: 1.5rem;
-  color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .specialty-item span {
   font-weight: var(--font-weight-medium);
-  color: var(--color-text);
+  color: var(--color-white);
 }
 
 /* Services Section */
@@ -1241,19 +1291,58 @@ body {
   padding: var(--space-2xl) 0;
   background: var(--gradient-section);
   color: var(--color-white);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 79, 170, 0.8), rgba(19, 44, 124, 0.9), rgba(3, 34, 74, 1));
+  background-size: 400% 400%;
+  animation: gradientMovement 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes gradientMovement {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .services .section-title {
   color: var(--color-white);
+  font-size: 3rem;
+  margin-bottom: var(--space-xl);
+}
+
+.services .container {
+  position: relative;
+  z-index: 1;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
   margin-top: var(--space-lg);
-  justify-content: center; /* Centraliza os 5 quadros na linha */
-  /* justify-items removido para evitar desalinhamento */
+  justify-content: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .service-card {
@@ -1305,6 +1394,13 @@ body {
   color: var(--color-white);
   transition: all var(--duration-slow) var(--ease-smooth);
   will-change: transform;
+  flex-shrink: 0;
+  position: relative;
+  min-width: 70px;
+  min-height: 70px;
+  max-width: 70px;
+  max-height: 70px;
+  aspect-ratio: 1;
 }
 
 /* ÍCONES COM ROTAÇÃO SUAVE */
@@ -1315,7 +1411,12 @@ body {
 .service-title {
   font-size: 1.1rem;
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  background: linear-gradient(45deg, var(--color-primary), #32b8c6, var(--color-primary));
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease-in-out infinite;
   margin-bottom: var(--space-sm);
 }
 
@@ -1335,7 +1436,35 @@ body {
 .packages {
   padding: var(--space-2xl) 0;
   background: var(--color-white);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   overflow: hidden;
+  position: relative;
+}
+
+.packages::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(50, 184, 198, 0.1), transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(26, 79, 170, 0.1), transparent 50%);
+  animation: floatingShapes 10s ease-in-out infinite;
+}
+
+@keyframes floatingShapes {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(20px, -15px) rotate(2deg); }
+  50% { transform: translate(-10px, 20px) rotate(-2deg); }
+  75% { transform: translate(-15px, -10px) rotate(1deg); }
+}
+
+.packages .container {
+  position: relative;
+  z-index: 1;
 }
 
 .package-cards {
@@ -1367,17 +1496,34 @@ body {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   overflow: hidden;
-  transition: all var(--duration-normal) var(--ease-smooth);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
   width: 280px;
   flex-shrink: 0;
   border: 1px solid rgba(19, 44, 124, 0.1);
+  position: relative;
+}
+
+.package-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(50, 184, 198, 0.1), rgba(26, 79, 170, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .package-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(26, 79, 170, 0.2);
+}
+
+.package-card:hover::before {
+  opacity: 1;
 }
 
 /* ELITE PACKAGE - Gradiente preto */
@@ -1420,6 +1566,7 @@ body {
   padding: var(--space-lg) var(--space-md);
   text-align: center;
   position: relative;
+  z-index: 2;
 }
 
 .package-header h3 {
@@ -1438,6 +1585,8 @@ body {
 .package-features {
   padding: var(--space-lg);
   flex-grow: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .feature {
@@ -1494,6 +1643,8 @@ body {
   padding: var(--space-lg);
   text-align: center;
   background: rgba(19, 44, 124, 0.03);
+  position: relative;
+  z-index: 2;
 }
 
 .package-btn {
@@ -1684,10 +1835,40 @@ body {
 .contact {
   padding: var(--space-2xl) 0;
   background: var(--gradient-section);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 79, 170, 0.8), rgba(19, 44, 124, 0.9), rgba(3, 34, 74, 1));
+  background-size: 400% 400%;
+  animation: gradientMovement 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.contact .container {
+  position: relative;
+  z-index: 1;
 }
 
 .contact .section-title {
   color: var(--color-white);
+  font-size: 3rem;
+  background: linear-gradient(45deg, #ffffff, #e0e0e0, #ffffff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease-in-out infinite;
 }
 
 .contact-content {
@@ -1949,6 +2130,10 @@ body {
     gap: var(--space-lg);
   }
   
+  .services .section-title {
+    font-size: 2.2rem;
+  }
+  
   /* PACOTES - ALTERAÇÃO PRINCIPAL PARA MOBILE */
   .package-cards {
     display: grid;
@@ -1962,6 +2147,19 @@ body {
     width: 100%;
     max-width: 100%;
     flex-shrink: initial;
+  }
+
+  /* About and Packages sections mobile adjustments */
+  .about,
+  .packages,
+  .services {
+    min-height: auto;
+    padding: var(--space-xl) 0;
+  }
+  
+  .about::before,
+  .packages::before {
+    display: none;
   }
   
   /* Services categories mobile */
@@ -2074,6 +2272,18 @@ body {
   .contact-img {
     max-width: 100%;
     height: auto;
+  }
+}
+
+/* Tablet breakpoint for 2 columns */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+  
+  .services .section-title {
+    font-size: 2.5rem;
   }
 }
 

@@ -118,10 +118,9 @@
                 </div>
                 <nav class="nav">
                     <a href="#hero" class="nav-link">Início</a>
-                    <a href="#about" class="nav-link">Sobre</a>
                     <a href="#services" class="nav-link">Serviços</a>
                     <a href="#packages" class="nav-link">Pacotes</a>
-                    <a href="#individual-services" class="nav-link">Serviços Avulsos</a>
+                    <a href="#about" class="nav-link">Sobre</a>
                     <a href="#contact" class="nav-link">Contato</a>
                 </nav>
                 <button class="menu-toggle" aria-label="Menu">
@@ -132,13 +131,16 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero">
+    <section id="hero" class="hero hero-full">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text smooth-fade-in">
-                    <h1 class="hero-title">Marketing de verdade, que gera resultados</h1>
+                    <h1 class="hero-title">
+                        <span class="gradient-animated">Marketing</span> de verdade, que gera resultados
+                    </h1>
                     <p class="hero-description">Criação de conteúdo estratégico, focado em performance, que irá transformar sua presença digital em uma máquina de vendas. Mais de 5 anos entregando resultados reais para negócios que querem crescer.</p>
-                    <a href="https://wa.me/5588996320934?text=Olá! Gostaria de saber mais sobre seus serviços de marketing digital." target="_blank" class="btn btn-primary hero-cta">
+                    <a href="https://wa.me/5588996320934?text=Olá! Gostaria de saber mais sobre seus serviços de marketing digital." target="_blank" class="btn btn-primary hero-cta btn-cta-animated">
+                        <span class="cta-glow"></span>
                         <i class="fab fa-whatsapp"></i>
                         Fale Comigo
                     </a>
@@ -148,39 +150,9 @@
                     <img src="https://raw.githubusercontent.com/alissonsantosfreire/website2/refs/heads/main/Imagem%20principal.webp" alt="Alisson Freire" class="hero-img">
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text smooth-slide-left">
-                    <h2 class="section-title">Sobre Mim</h2>
-                    <p class="about-description">Muito prazer. Sou Alisson Freire e sou apaixonado em criar estratégias criativas para profissionais e negócios. Sou especialista em desenvolver soluções personalizadas que conectam marcas ao seu público-alvo, gerando engajamento real e vendas consistentes.</p>
-                    <div class="specialties">
-                        <div class="specialty-item">
-                            <i class="fas fa-lightbulb"></i>
-                            <span>Criação de Conteúdo Estratégico</span>
-                        </div>
-                        <div class="specialty-item">
-                            <i class="fas fa-headset"></i>
-                            <span>Assessoria Exclusiva</span>
-                        </div>
-                        <div class="specialty-item">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Planejamento Especializado</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/5588996320934?text=Olá! Gostaria de saber mais sobre como você pode me ajudar." target="_blank" class="btn btn-primary hero-cta">
-                        <i class="fab fa-whatsapp"></i>
-                        Fale Comigo
-                    </a>
-                </div>
-                <!-- Mobile: Imagem primeiro -->
-                <div class="about-image mobile-first smooth-fade-in">
-                    <img src="https://raw.githubusercontent.com/alissonsantosfreire/website2/refs/heads/main/Imagem%20secundária%201.webp" alt="Sobre Alisson Freire" class="about-img">
-                </div>
+            <div class="hero-visuals">
+                <div class="hero-shape hero-shape-1"></div>
+                <div class="hero-shape hero-shape-2"></div>
             </div>
         </div>
     </section>
@@ -188,33 +160,9 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title text-center smooth-fade-in">Meus Serviços</h2>
+            <h2 class="section-title text-center smooth-fade-in">Meus <span class="gradient-animated">Serviços</span></h2>
             <div class="services-grid">
                 <div class="service-card featured smooth-fade-in" data-delay="0.1">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="service-title">Desenvolvimento de Landing Pages</h3>
-                    <p class="service-description">Landing Pages completas, responsivas e otimizadas para conversão. Desenvolvidas com as melhores práticas de UX/UI.</p>
-                    <a href="https://wa.me/5588996320934?text=Olá! Tenho interesse no desenvolvimento de Landing Page completa." target="_blank" class="btn btn-primary">
-                        <i class="fab fa-whatsapp"></i>
-                        Contrate Agora
-                    </a>
-                </div>
-                
-                <div class="service-card smooth-fade-in" data-delay="0.2">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3 class="service-title">Criação de Artes Gráficas</h3>
-                    <p class="service-description">Design profissional para redes sociais, posts simples e carrosséis que comunicam sua marca de forma impactante.</p>
-                    <a href="https://wa.me/5588996320934?text=Olá! Gostaria de saber mais sobre criação de artes gráficas." target="_blank" class="btn btn-primary">
-                        <i class="fab fa-whatsapp"></i>
-                        Contrate Agora
-                    </a>
-                </div>
-                
-                <div class="service-card smooth-fade-in" data-delay="0.3">
                     <div class="service-icon">
                         <i class="fas fa-video"></i>
                     </div>
@@ -225,8 +173,18 @@
                         Contrate Agora
                     </a>
                 </div>
-                
-                <div class="service-card smooth-fade-in" data-delay="0.4">
+                <div class="service-card featured smooth-fade-in" data-delay="0.2">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Storymaker</h3>
+                    <p class="service-description">Criação de stories profissionais e envolventes para Instagram e outras redes sociais, aumentando o engajamento da sua marca.</p>
+                    <a href="https://wa.me/5588996320934?text=Olá! Tenho interesse no serviço de Storymaker para redes sociais." target="_blank" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i>
+                        Contrate Agora
+                    </a>
+                </div>
+                <div class="service-card featured smooth-fade-in" data-delay="0.3">
                     <div class="service-icon">
                         <i class="fas fa-camera"></i>
                     </div>
@@ -237,14 +195,35 @@
                         Contrate Agora
                     </a>
                 </div>
-                
-                <div class="service-card smooth-fade-in" data-delay="0.5">
+                <div class="service-card featured smooth-fade-in" data-delay="0.4">
                     <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fas fa-palette"></i>
                     </div>
-                    <h3 class="service-title">Storymaker</h3>
-                    <p class="service-description">Criação de stories profissionais e envolventes para Instagram e outras redes sociais, aumentando o engajamento da sua marca.</p>
-                    <a href="https://wa.me/5588996320934?text=Olá! Tenho interesse no serviço de Storymaker para redes sociais." target="_blank" class="btn btn-primary">
+                    <h3 class="service-title">Criação de Artes Gráficas</h3>
+                    <p class="service-description">Design profissional para redes sociais, posts simples e carrosséis que comunicam sua marca de forma impactante.</p>
+                    <a href="https://wa.me/5588996320934?text=Olá! Gostaria de saber mais sobre criação de artes gráficas." target="_blank" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i>
+                        Contrate Agora
+                    </a>
+                </div>
+                <div class="service-card featured smooth-fade-in" data-delay="0.5">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Desenvolvimento de Landing Pages</h3>
+                    <p class="service-description">Landing Pages completas, responsivas e otimizadas para conversão. Desenvolvidas com as melhores práticas de UX/UI.</p>
+                    <a href="https://wa.me/5588996320934?text=Olá! Tenho interesse no desenvolvimento de Landing Page completa." target="_blank" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i>
+                        Contrate Agora
+                    </a>
+                </div>
+                <div class="service-card featured smooth-fade-in" data-delay="0.6">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="service-title">Tráfego Pago</h3>
+                    <p class="service-description">Gestão de campanhas de anúncios no Google Ads, Facebook Ads e Instagram Ads para maximizar seus resultados e ROI.</p>
+                    <a href="https://wa.me/5588996320934?text=Olá! Tenho interesse no serviço de Tráfego Pago e gestão de anúncios." target="_blank" class="btn btn-primary">
                         <i class="fab fa-whatsapp"></i>
                         Contrate Agora
                     </a>
@@ -256,7 +235,7 @@
     <!-- Packages Section -->
     <section id="packages" class="packages">
         <div class="container">
-            <h2 class="section-title text-center smooth-fade-in">Pacotes Estratégicos</h2>
+            <h2 class="section-title text-center smooth-fade-in">Pacotes <span class="gradient-animated">Estratégicos</span></h2>
             <p class="section-subtitle text-center smooth-fade-in">Soluções completas para acelerar seu crescimento digital</p>
             
             <div class="package-cards">
@@ -341,6 +320,10 @@
                             <i class="fas fa-camera"></i>
                             <span>10 fotos mensais <span class="bonus-tag">BÔNUS</span></span>
                         </div>
+                        <div class="feature bonus-feature">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>Tráfego Pago <span class="bonus-tag">BÔNUS</span></span>
+                        </div>
                     </div>
                     <div class="package-footer">
                         <button class="btn btn-primary package-btn" data-package="PRO">
@@ -382,6 +365,10 @@
                         <div class="feature bonus-feature">
                             <i class="fas fa-code"></i>
                             <span>Landing Page <span class="bonus-tag">BÔNUS</span></span>
+                        </div>
+                        <div class="feature bonus-feature">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>Tráfego Pago <span class="bonus-tag">BÔNUS</span></span>
                         </div>
                     </div>
                     <div class="package-footer">
@@ -425,6 +412,10 @@
                             <i class="fas fa-code"></i>
                             <span>Landing Page <span class="bonus-tag">BÔNUS</span></span>
                         </div>
+                        <div class="feature bonus-feature">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>Tráfego Pago <span class="bonus-tag">BÔNUS</span></span>
+                        </div>
                     </div>
                     <div class="package-footer">
                         <button class="btn btn-primary package-btn" data-package="MASTER">
@@ -437,141 +428,35 @@
         </div>
     </section>
 
-    <!-- Individual Services Section - REFORMULADO com botões únicos -->
-    <section id="individual-services" class="individual-services">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title text-center smooth-fade-in">Serviços Avulsos</h2>
-            
-            <div class="services-categories">
-                <!-- Desenvolvimento de Landing Page -->
-                <div class="service-category smooth-fade-in" data-delay="0.1">
-                    <div class="service-category-header">
-                        <div class="service-category-icon">
-                            <i class="fas fa-code"></i>
+            <div class="about-content">
+                <div class="about-text smooth-slide-left">
+                    <h2 class="section-title">Sobre <span class="gradient-animated">Mim</span></h2>
+                    <p class="about-description">Muito prazer. Sou Alisson Freire e sou apaixonado em criar estratégias criativas para profissionais e negócios. Sou especialista em desenvolver soluções personalizadas que conectam marcas ao seu público-alvo, gerando engajamento real e vendas consistentes.</p>
+                    <div class="specialties">
+                        <div class="specialty-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Criação de Conteúdo Estratégico</span>
                         </div>
-                        <h3 class="service-category-title">Desenvolvimento de Landing Page</h3>
-                        <p class="service-category-description">Criação de Landing Pages personalizadas e responsivas para sua empresa.</p>
-                    </div>
-                    <div class="service-category-content">
-                        <button class="service-info-btn-single" data-service="Desenvolvimento de Landing Page">
-                            <i class="fab fa-whatsapp"></i>
-                            <span class="service-single-name">Quero saber mais</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Artes Gráficas -->
-                <div class="service-category smooth-fade-in" data-delay="0.2">
-                    <div class="service-category-header">
-                        <div class="service-category-icon">
-                            <i class="fas fa-palette"></i>
+                        <div class="specialty-item">
+                            <i class="fas fa-headset"></i>
+                            <span>Assessoria Exclusiva</span>
                         </div>
-                        <h3 class="service-category-title">Artes Gráficas</h3>
-                        <p class="service-category-description">Design profissional para redes sociais e materiais gráficos.</p>
-                    </div>
-                    <div class="service-category-content">
-                        <button class="service-info-btn-single" data-service="Artes Gráficas">
-                            <i class="fab fa-whatsapp"></i>
-                            <span class="service-single-name">Quero saber mais</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Vídeos - Somente Edição -->
-                <div class="service-category smooth-fade-in" data-delay="0.3">
-                    <div class="service-category-header">
-                        <div class="service-category-icon">
-                            <i class="fas fa-video"></i>
+                        <div class="specialty-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Planejamento Especializado</span>
                         </div>
-                        <h3 class="service-category-title">Edição de Vídeos</h3>
-                        <p class="service-category-description">Edição profissional de vídeos com material fornecido pelo cliente.</p>
                     </div>
-                    <div class="service-category-content">
-                        <button class="service-info-btn-single" data-service="Edição de Vídeos">
-                            <i class="fab fa-whatsapp"></i>
-                            <span class="service-single-name">Quero saber mais</span>
-                        </button>
-                    </div>
+                    <a href="https://wa.me/5588996320934?text=Olá! Gostaria de saber mais sobre como você pode me ajudar." target="_blank" class="btn btn-primary hero-cta">
+                        <i class="fab fa-whatsapp"></i>
+                        Fale Comigo
+                    </a>
                 </div>
-
-                <!-- Vídeos - Gravação + Edição -->
-                <div class="service-category smooth-fade-in" data-delay="0.4">
-                    <div class="service-category-header">
-                        <div class="service-category-icon">
-                            <i class="fas fa-film"></i>
-                        </div>
-                        <h3 class="service-category-title">Produção de Vídeos</h3>
-                        <p class="service-category-description">Produção completa de vídeos incluindo gravação e edição.</p>
-                    </div>
-                    <div class="service-category-content">
-                        <button class="service-info-btn-single" data-service="Produção de Vídeos">
-                            <i class="fab fa-whatsapp"></i>
-                            <span class="service-single-name">Quero saber mais</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Sessões Fotográficas -->
-                <div class="service-category smooth-fade-in" data-delay="0.5">
-                    <div class="service-category-header">
-                        <div class="service-category-icon">
-                            <i class="fas fa-camera-retro"></i>
-                        </div>
-                        <h3 class="service-category-title">Sessões Fotográficas</h3>
-                        <p class="service-category-description">Fotos profissionais para fortalecer sua identidade visual.</p>
-                    </div>
-                    <div class="service-category-content">
-                        <button class="service-info-btn-single" data-service="Sessões Fotográficas">
-                            <i class="fab fa-whatsapp"></i>
-                            <span class="service-single-name">Quero saber mais</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Storymaker -->
-                <div class="service-category smooth-fade-in" data-delay="0.6">
-                    <div class="service-category-header">
-                        <div class="service-category-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="service-category-title">Storymaker</h3>
-                        <p class="service-category-description">Criação de stories profissionais para suas redes sociais.</p>
-                    </div>
-                    <div class="service-category-content">
-                        <button class="service-info-btn-single" data-service="Storymaker">
-                            <i class="fab fa-whatsapp"></i>
-                            <span class="service-single-name">Quero saber mais</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Terms Section -->
-    <section id="terms" class="terms">
-        <div class="container">
-            <h2 class="section-title text-center smooth-fade-in">Condições Contratuais</h2>
-            <div class="terms-grid">
-                <div class="term-item smooth-fade-in" data-delay="0.1">
-                    <i class="fas fa-credit-card"></i>
-                    <h3>Formas de Pagamento</h3>
-                    <p>50% do valor antecipado para iniciar qualquer projeto ou serviço avulso. Planos mensais: 50% para início + 50% na entrega do primeiro mês.</p>
-                </div>
-                <div class="term-item smooth-fade-in" data-delay="0.2">
-                    <i class="fas fa-calendar-times"></i>
-                    <h3>Cancelamento</h3>
-                    <p>Cancelamento gratuito a qualquer momento com aviso prévio de 15 dias. Valores pagos não são reembolsáveis.</p>
-                </div>
-                <div class="term-item smooth-fade-in" data-delay="0.3">
-                    <i class="fas fa-clock"></i>
-                    <h3>Prazos de Entrega</h3>
-                    <p>Landing Pages: até 10 dias úteis após briefing aprovado. Fotos: até 5 dias úteis após sessão. Artes e vídeos: entrega semanal conforme cronograma.</p>
-                </div>
-                <div class="term-item smooth-fade-in" data-delay="0.4">
-                    <i class="fas fa-redo"></i>
-                    <h3>Revisões</h3>
-                    <p>Até 2 revisões por arte/vídeo. Até 3 fotos podem ser retrabalhadas por sessão. Revisões extras: R$ 15 por item.</p>
+                <!-- Mobile: Imagem primeiro -->
+                <div class="about-image mobile-first smooth-fade-in">
+                    <img src="https://raw.githubusercontent.com/alissonsantosfreire/website2/refs/heads/main/Imagem%20secundária%201.webp" alt="Sobre Alisson Freire" class="about-img">
                 </div>
             </div>
         </div>
@@ -582,7 +467,7 @@
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info smooth-slide-left">
-                    <h2 class="section-title">Pronto para transformar seu negócio?</h2>
+                    <h2 class="section-title">Pronto para <span class="gradient-animated">transformar</span> seu negócio?</h2>
                     <p class="contact-description">Entre em contato agora e descubra como posso ajudar seu negócio a alcançar resultados através de conteúdos estratégicos.</p>
                     
                     <div class="contact-methods">
@@ -638,5 +523,180 @@
     </footer>
 
     <script src="app.js"></script>
+    <style>
+    /* HERO FULL SCREEN NO DESKTOP */
+    .hero.hero-full {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+    @media (max-width: 900px) {
+        .hero.hero-full {
+            min-height: unset;
+        }
+    }
+
+    /* TÍTULO COM GRADIENTE ANIMADO NA PALAVRA MARKETING */
+    .hero-title {
+        font-size: 3.2rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 1.2rem;
+        position: relative;
+        z-index: 2;
+        text-align: left;
+    }
+    .gradient-animated {
+        background: linear-gradient(90deg, var(--color-primary), #32b8c6, #fcb900, var(--color-primary));
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        animation: gradientMove 3s linear infinite;
+        font-size: 1.1em;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+        filter: drop-shadow(0 2px 8px rgba(33,128,141,0.10));
+    }
+    @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* BOTÃO HERO CTA ANIMADO */
+    .btn-cta-animated {
+        position: relative;
+        overflow: visible;
+        box-shadow: 0 4px 24px 0 rgba(33,128,141,0.10);
+        animation: ctaPulse 1.8s infinite cubic-bezier(.4,0,.2,1);
+        z-index: 2;
+    }
+    .btn-cta-animated .cta-glow {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+        opacity: 0.18;
+        transform: translate(-50%, -50%) scale(1);
+        pointer-events: none;
+        z-index: 1;
+        filter: blur(8px);
+        animation: ctaGlow 2.2s infinite alternate;
+    }
+    @keyframes ctaPulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.06); }
+        100% { transform: scale(1); }
+    }
+    @keyframes ctaGlow {
+        0% { opacity: 0.18; }
+        100% { opacity: 0.32; }
+    }
+
+    /* HERO VISUALS - SHAPES */
+    .hero-visuals {
+        position: absolute;
+        left: 0; top: 0; width: 100%; height: 100%;
+        pointer-events: none;
+        z-index: 0;
+    }
+    .hero-shape {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0.13;
+        animation: heroShapeFloat 8s ease-in-out infinite alternate;
+    }
+    .hero-shape-1 {
+        width: 340px; height: 340px;
+        background: linear-gradient(120deg, var(--color-primary), #32b8c6);
+        left: -80px; top: 10%;
+        animation-delay: 0s;
+    }
+    .hero-shape-2 {
+        width: 220px; height: 220px;
+        background: linear-gradient(120deg, #fcb900, var(--color-primary));
+        right: -60px; bottom: 12%;
+        animation-delay: 2s;
+    }
+    @keyframes heroShapeFloat {
+        0% { transform: translateY(0) scale(1); }
+        100% { transform: translateY(-30px) scale(1.08); }
+    }
+
+    /* DESTAQUE EM TODOS OS SERVICE CARDS - CORRIGIDO PARA FUNDO BRANCO/GRADIENTE CLARO */
+    .service-card.featured {
+        border: 2px solid var(--color-primary);
+        box-shadow: 0 6px 32px 0 rgba(33,128,141,0.10);
+        background: linear-gradient(120deg, #fff 80%, #f7fafc 100%);
+        position: relative;
+        transition: box-shadow .3s, border-color .3s;
+        color: var(--color-text);
+    }
+    .service-card.featured::before {
+        content: '';
+        position: absolute;
+        left: 0; top: 0; width: 100%; height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(120deg, var(--color-primary) 0%, #32b8c6 100%);
+        opacity: 0.04;
+        z-index: 0;
+        pointer-events: none;
+    }
+    .service-card.featured .service-title,
+    .service-card.featured .service-description {
+        color: var(--color-text);
+    }
+    .service-card.featured .service-title {
+        font-weight: 700;
+    }
+    .service-card.featured:hover {
+        box-shadow: 0 12px 40px 0 rgba(33,128,141,0.16);
+        border-color: #fcb900;
+    }
+
+    /* ANIMAÇÃO EXTRA NO HERO IMG */
+    .hero-img {
+        transition: transform 0.7s cubic-bezier(.16,1,.3,1);
+        box-shadow: none;
+        max-width: 420px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    @media (min-width: 900px) {
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+        .hero-text {
+            flex: 1 1 0;
+        }
+        .hero-image {
+            flex: 1 1 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-img {
+            max-width: 520px;
+        }
+    }
+
+    /* RESPONSIVO: AJUSTES PARA MOBILE */
+    @media (max-width: 600px) {
+        .hero-title { font-size: 2.1rem; }
+        .hero-shape-1 { width: 180px; height: 180px; left: -40px; }
+        .hero-shape-2 { width: 120px; height: 120px; right: -30px; }
+    }
+    </style>
 </body>
 </html>
