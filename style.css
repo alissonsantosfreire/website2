@@ -1405,7 +1405,13 @@ body {
 
 .package-card.elite-package .bonus-tag {
   background: #ffd700;
-  color: #1a202c;
+  color: #1c2436;
+}
+
+/* Regra mais específica para garantir a aplicação da cor */
+.package-card.elite-package .bonus-feature .bonus-tag {
+  background: #ffd700 !important;
+  color: #1c2436 !important;
 }
 
 .package-header {
