@@ -113,7 +113,7 @@ function initPackageButtons() {
 
 // Função para botões de serviços únicos
 function initServiceButtons() {
-    const serviceButtons = document.querySelectorAll('.service-unified-btn');
+    const serviceButtons = document.querySelectorAll('.service-info-btn-single');
     
     serviceButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -164,50 +164,32 @@ function contactPackage(packageName) {
     const packages = {
         'START': {
             name: 'PLANO START',
-            videos: '1 vídeo mensal',
-            artes: '4 artes mensais', 
-            fotos: '10 fotos mensais',
-            valor: 'R$ 497/mês'
+            description: 'Ideal para quem está começando no marketing digital'
         },
         'GROWTH': {
             name: 'PLANO GROWTH',
-            videos: '2 vídeos mensais',
-            artes: '4 artes mensais',
-            fotos: '10 fotos mensais', 
-            valor: 'R$ 697/mês'
+            description: 'Perfeito para negócios em crescimento'
         },
         'PRO': {
             name: 'PLANO PRO',
-            videos: '4 vídeos mensais',
-            artes: '4 artes mensais',
-            fotos: '10 fotos mensais',
-            valor: 'R$ 897/mês'
+            description: 'Para empresas que querem resultados consistentes'
         },
         'ELITE': {
             name: 'PLANO ELITE', 
-            videos: '8 vídeos mensais',
-            artes: '4 artes mensais',
-            fotos: '10 fotos mensais',
-            valor: 'R$ 1.297/mês'
+            description: 'Solução premium para máximo impacto'
         },
         'MASTER': {
             name: 'PLANO MASTER',
-            videos: '12 vídeos mensais', 
-            artes: '8 artes mensais',
-            fotos: '10 fotos mensais',
-            valor: 'R$ 1.997/mês'
+            description: 'O mais completo para dominar o mercado digital'
         }
     };
     
     const selectedPackage = packages[packageName];
     if (selectedPackage) {
         const message = encodeURIComponent(
-            `Olá! Tenho interesse no ${selectedPackage.name}:\n\n` +
-            `📹 ${selectedPackage.videos}\n` +
-            `🎨 ${selectedPackage.artes}\n` +
-            `📸 ${selectedPackage.fotos}\n` +
-            `💰 ${selectedPackage.valor}\n\n` +
-            `Gostaria de mais informações sobre este pacote.`
+            `Olá! Tenho interesse no ${selectedPackage.name}.\n\n` +
+            `${selectedPackage.description}.\n\n` +
+            `Gostaria de mais informações sobre este pacote e valores.`
         );
         const whatsappLink = `https://wa.me/5588996320934?text=${message}`;
         window.open(whatsappLink, '_blank');
